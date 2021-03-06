@@ -1,0 +1,256 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font: 400 18px/1 "Barlow Condensed", sans-serif;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    font: 400 18px/1.5 "Barlow Condensed", sans-serif;
+    color: hsl(231, 7%, 65%);
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 75%;
+    z-index: 1;
+    margin: 3rem 0;
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header span {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+#logo {
+    transition: transform 0.25s ease;
+}
+
+#logo:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#desktopNav {
+    display: inherit;
+    align-items: inherit;
+}
+
+#desktopNav a {
+    text-decoration: none;
+    color: hsl(230, 29%, 20%);
+    margin: 0 1rem;
+    font-weight: 700;
+}
+
+#desktopNav a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    display: block;
+    background-color: hsl(230, 29%, 20%);
+    transition: width 0.25s ease;
+}
+
+#desktopNav #loginDesktop {
+    color: hsl(231, 7%, 65%);
+}
+
+#desktopNav #loginDesktop::after {
+    background-color: hsl(231, 7%, 65%);
+}
+
+#desktopNav a:hover {
+    cursor: pointer;
+}
+
+#desktopNav a:hover::after {
+    width: 100%;
+}
+
+#desktopNav span {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: hsl(231, 7%, 65%);
+    border-radius: 50%;
+    margin: 0 1rem;
+}
+
+#mobileNav {
+    background-color: #fff;
+    width: 100%;
+    padding: 1rem 2rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: -0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 5rem;
+    transition: all 0.5s ease-in-out;
+}
+
+#mobileNav a {
+    width: 100%;
+    color: hsl(230, 29%, 20%);
+    margin: 1rem;
+    font-weight: 700;
+}
+
+#mobileNav #loginMobile {
+    padding: 2rem 0;
+    margin-top: 1rem;
+    border-top: 1px solid hsl(231, 7%, 65%);
+    color: hsl(231, 7%, 65%);
+}
+
+#burgerIcon,
+#mobileNav {
+    display: none;
+}
+
+#burgerIcon svg path {
+    stroke: none;
+    fill: hsl(230, 29%, 20%);
+}
+
+#mobileNav.hidden {
+    padding: 0;
+    opacity: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section {
+    width: 60%;
+    flex-shrink: 0;
+    padding-right: 3rem;
+}
+
+.pillText {
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 2px;
+    color: hsl(207, 33%, 95%);
+    background-color: hsl(230, 29%, 20%);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    margin: 0 1rem 1rem 0;
+}
+
+.extraText {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.spaced {
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 4rem;
+    color: hsl(230, 29%, 20%);
+    margin: 1rem 0 2rem;
+}
+
+p {
+    line-height: 1.5;
+    font-size: 1.25rem;
+    color: hsl(230, 11%, 40%);
+    margin-bottom: 3rem;
+}
+
+button {
+    font-weight: 700;
+    padding: 1rem;
+    background-color: hsl(0, 100%, 68%);
+    color: hsl(207, 33%, 95%);
+    border-radius: 0.5rem;
+    transition: background-color 0.25s ease;
+    margin-right: 1rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: hsl(0, 100%, 73%);
+}
+
+figure {
+    width: 45%;
+}
+
+figure img {
+    width: 200%;
+}
+
+.backgroundDiv {
+    background-color: hsl(207, 33%, 95%);
+    border-radius: 2rem;
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 60%;
+    height: 60%;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+    main {
+        flex-direction: column-reverse;
+    }
+    .container {
+        width: 85%;
+        margin: 3rem 0;
+    }
+    section {
+        width: 100%;
+        padding: 0;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    figure {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    #desktopNav {
+        display: none;
+    }
+    #burgerIcon,
+    #mobileNav {
+        display: flex;
+    }
+}
